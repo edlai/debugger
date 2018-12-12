@@ -1,14 +1,24 @@
+/**
+ to test memory-leak without free char
+ normally, user should call free before exit
+*/
+
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
+#include <stdlib.h>
 
 int main(void){
+
   char a[] = "strdup";
   char *b;
 
   b = strdup(a);
   printf("b[]=\"%s\"\n", b);
+  //free(b);
   return 0;
 }
+
 
 /* an example of memory leak for usage of strdup
 

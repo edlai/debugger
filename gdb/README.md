@@ -8,7 +8,10 @@
 
 - trace code with using `break 1`, `run`, `n` and so on
 
-```
+``` sh
+
+# gcc -ggdb3 -o strdup-with-out-free strdup-with-out-free.c
+
 # gdb ./strdup-with-out-free
 GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
 Copyright (C) 2016 Free Software Foundation, Inc.

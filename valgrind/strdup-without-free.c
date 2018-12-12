@@ -20,6 +20,7 @@ int main(void){
  - normally, user should call free before exit
  - there is the result of valgrind which warning use should check memory-leak
 
+# gcc -o strdup-without-free strdup-without-free.c
 # valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all  -v ./strdup-without-free
 
 ==9326== Memcheck, a memory error detector

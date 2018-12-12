@@ -22,3 +22,7 @@ a useful tool to check memory leak.
   ```sh
   valgrind –leak-check=yes ${prog_name}
   ```
+
+## Reference
+
+- [檢查程式記憶體的小工具-valgrind](http://daydreamer.idv.tw/rewrite.php/read-18.html)

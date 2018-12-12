@@ -25,4 +25,5 @@ a useful tool to check memory leak.
 
 ## Reference
 
+- [Valgrind 的介绍](http://senlinzhan.github.io/2017/12/31/valgrind/)
 - [檢查程式記憶體的小工具-valgrind](http://daydreamer.idv.tw/rewrite.php/read-18.html)

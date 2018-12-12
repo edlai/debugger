@@ -20,7 +20,7 @@ a useful tool to check memory leak.
 
 - valgrind
   ```sh
-  valgrind --leak-check=full ${prog_name}
+  valgrind --leak-check=full --show-leak-kinds=all  ${prog_name}
   ```
 
 ## Reference

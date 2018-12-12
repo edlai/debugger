@@ -1,517 +1,656 @@
-**8098** *** memcpy_chk: buffer overflow detected ***: program terminated
-==8098==    at 0x4C309FC: VALGRIND_PRINTF_BACKTRACE (valgrind.h:6306)
-==8098==    by 0x4C35C8A: __memcpy_chk (vg_replace_strmem.c:1593)
-==8098==    by 0x4174BD: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441113: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== HEAP SUMMARY:
-==8098==     in use at exit: 14,805 bytes in 62 blocks
-==8098==   total heap usage: 462 allocs, 400 frees, 56,198 bytes allocated
-==8098==
-==8098== 3 bytes in 1 blocks are still reachable in loss record 1 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF4DCA: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4411D4: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 5 bytes in 1 blocks are still reachable in loss record 2 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF4DCA: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4411B4: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 9 bytes in 1 blocks are still reachable in loss record 3 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442F62: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 9 bytes in 1 blocks are still reachable in loss record 4 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442FE5: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 9 bytes in 1 blocks are still reachable in loss record 5 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF4DCA: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441200: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 9 bytes in 1 blocks are still reachable in loss record 6 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF4DCA: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441224: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 9 bytes in 1 blocks are still reachable in loss record 7 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF487F: json_object_object_add (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441234: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 9 bytes in 1 blocks are still reachable in loss record 8 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF4DCA: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441144: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 10 bytes in 1 blocks are still reachable in loss record 9 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442F35: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 10 bytes in 1 blocks are still reachable in loss record 10 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF487F: json_object_object_add (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4411AC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 11 bytes in 1 blocks are still reachable in loss record 11 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442F8F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 11 bytes in 1 blocks are still reachable in loss record 12 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442FBA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 11 bytes in 1 blocks are still reachable in loss record 13 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x44303F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 11 bytes in 1 blocks are still reachable in loss record 14 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF487F: json_object_object_add (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441154: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 12 bytes in 1 blocks are still reachable in loss record 15 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443012: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 13 bytes in 1 blocks are still reachable in loss record 16 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF487F: json_object_object_add (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441210: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 13 bytes in 1 blocks are still reachable in loss record 17 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF487F: json_object_object_add (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4411E4: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 13 bytes in 1 blocks are still reachable in loss record 18 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF487F: json_object_object_add (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4411C4: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 16 bytes in 1 blocks are still reachable in loss record 19 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x54C3524: ??? (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B18DB: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 16 bytes in 1 blocks are still reachable in loss record 20 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x54B0A94: event_base_priority_init (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B17D4: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 16 bytes in 1 blocks are still reachable in loss record 21 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF487F: json_object_object_add (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441192: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 24 bytes in 1 blocks are still reachable in loss record 22 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x54BE7E6: evmap_io_add (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54AFA16: event_add (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B183E: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 32 bytes in 1 blocks are still reachable in loss record 23 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x54B08F6: event_get_supported_methods (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x42EB24: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406D52: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 40 bytes in 1 blocks are still reachable in loss record 24 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x56E8F21: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
-==8098==    by 0x54B1FE2: event_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x56E90FA: evthread_use_pthreads (in /mydlink/lib/libevent_pthreads-2.0.so.5)
-==8098==    by 0x42EB14: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406D52: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 40 bytes in 1 blocks are still reachable in loss record 25 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x56E8F21: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
-==8098==    by 0x54C4563: evsig_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B1FF5: event_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x56E90FA: evthread_use_pthreads (in /mydlink/lib/libevent_pthreads-2.0.so.5)
-==8098==    by 0x42EB14: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406D52: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 40 bytes in 1 blocks are still reachable in loss record 26 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x56E8F21: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
-==8098==    by 0x54C2693: evutil_secure_rng_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B2000: event_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x56E90FA: evthread_use_pthreads (in /mydlink/lib/libevent_pthreads-2.0.so.5)
-==8098==    by 0x42EB14: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406D52: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 40 bytes in 1 blocks are still reachable in loss record 27 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x56E8F21: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
-==8098==    by 0x54B180B: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 44 bytes in 1 blocks are still reachable in loss record 28 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x442D82: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 48 bytes in 1 blocks are still reachable in loss record 29 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x56E8E7A: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
-==8098==    by 0x54B182F: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 56 bytes in 1 blocks are still reachable in loss record 30 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x44129C: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442EFA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 64 bytes in 1 blocks are still reachable in loss record 31 of 56
-==8098==    at 0x4C2DDA0: malloc (vg_replace_malloc.c:298)
-==8098==    by 0x4C300F0: realloc (vg_replace_malloc.c:826)
-==8098==    by 0x54AF7A4: event_add (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D71: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 72 bytes in 1 blocks are still reachable in loss record 32 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x4412AE: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442EFA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 72 bytes in 1 blocks are still reachable in loss record 33 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF452F: json_object_new_object (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4410B4: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 72 bytes in 1 blocks are still reachable in loss record 34 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF4D97: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441200: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 72 bytes in 1 blocks are still reachable in loss record 35 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF4D97: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441224: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 72 bytes in 1 blocks are still reachable in loss record 36 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF4D97: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4411D4: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 72 bytes in 1 blocks are still reachable in loss record 37 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF4D97: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4411B4: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 72 bytes in 1 blocks are still reachable in loss record 38 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF4D97: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x44119C: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 72 bytes in 1 blocks are still reachable in loss record 39 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF4A12: json_object_new_int (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441182: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 72 bytes in 1 blocks are still reachable in loss record 40 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF4D97: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x441144: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 88 bytes in 1 blocks are still reachable in loss record 41 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF7E6A: lh_table_new (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x5AF456D: json_object_new_object (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4410B4: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 128 bytes in 1 blocks are still reachable in loss record 42 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x6913489: strdup (strdup.c:42)
-==8098==    by 0x5AF4DCA: json_object_new_string (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x44119C: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 136 bytes in 1 blocks are still reachable in loss record 43 of 56
-==8098==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
-==8098==    by 0x54B0D15: event_new (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D5A: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 256 bytes in 1 blocks are still reachable in loss record 44 of 56
-==8098==    at 0x4C2DDA0: malloc (vg_replace_malloc.c:298)
-==8098==    by 0x4C300F0: realloc (vg_replace_malloc.c:826)
-==8098==    by 0x54BE4EA: ??? (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54BE70B: evmap_io_add (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54AFA16: event_add (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B183E: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 272 bytes in 1 blocks are possibly lost in loss record 45 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x40138A4: allocate_dtv (dl-tls.c:322)
-==8098==    by 0x40138A4: _dl_allocate_tls (dl-tls.c:539)
-==8098==    by 0x5F1A26E: allocate_stack (allocatestack.c:588)
-==8098==    by 0x5F1A26E: pthread_create@@GLIBC_2.2.5 (pthread_create.c:539)
-==8098==    by 0x442EAB: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EBE: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 384 bytes in 1 blocks are still reachable in loss record 46 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x54C3543: ??? (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B18DB: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 512 bytes in 1 blocks are still reachable in loss record 47 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x5AF7E8C: lh_table_new (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x5AF456D: json_object_new_object (in /mydlink/lib/libjson-c.so.2.0.2)
-==8098==    by 0x4410B4: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 560 bytes in 1 blocks are still reachable in loss record 48 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442F35: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 560 bytes in 1 blocks are still reachable in loss record 49 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442F62: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 560 bytes in 1 blocks are still reachable in loss record 50 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442F8F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 560 bytes in 1 blocks are still reachable in loss record 51 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442FBA: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 560 bytes in 1 blocks are still reachable in loss record 52 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x442FE5: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 560 bytes in 1 blocks are still reachable in loss record 53 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443012: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 560 bytes in 1 blocks are still reachable in loss record 54 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x44303F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 640 bytes in 1 blocks are still reachable in loss record 55 of 56
-==8098==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
-==8098==    by 0x54B1629: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
-==8098==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== 7,168 bytes in 7 blocks are still reachable in loss record 56 of 56
-==8098==    at 0x4C2DDA0: malloc (vg_replace_malloc.c:298)
-==8098==    by 0x4C300F0: realloc (vg_replace_malloc.c:826)
-==8098==    by 0x44147D: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441945: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x441BD9: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x443081: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
-==8098==    by 0x68A882F: (below main) (libc-start.c:291)
-==8098==
-==8098== LEAK SUMMARY:
-==8098==    definitely lost: 0 bytes in 0 blocks
-==8098==    indirectly lost: 0 bytes in 0 blocks
-==8098==      possibly lost: 272 bytes in 1 blocks
-==8098==    still reachable: 14,533 bytes in 61 blocks
-==8098==         suppressed: 0 bytes in 0 blocks
-==8098==
-==8098== For counts of detected and suppressed errors, rerun with: -v
-==8098== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+root@ed:/mydlink/lib# valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -v /mydlink/da_adaptor  -p "wss://0.0.0.0:8082/SwitchCamera" -s "LD_LIBRARY_PATH=\"/mydlink/lib\" /mydlink/mdb" -d 7 >> /tmp/a
+==8860== Memcheck, a memory error detector
+==8860== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==8860== Using Valgrind-3.14.0-353a3587bb-20181007X and LibVEX; rerun with -h for copyright info
+==8860== Command: /mydlink/da_adaptor -p wss://0.0.0.0:8082/SwitchCamera -s LD_LIBRARY_PATH="/mydlink/lib"\ /mydlink/mdb -d 7
+==8860==
+--8860-- Valgrind options:
+--8860--    --tool=memcheck
+--8860--    --leak-check=full
+--8860--    --show-leak-kinds=all
+--8860--    -v
+--8860-- Contents of /proc/version:
+--8860--   Linux version 4.4.0-127-generic (buildd@lcy01-amd64-023) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #153-Ubuntu SMP Sat May 19 10:58:46 UTC 2018
+--8860--
+--8860-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--8860-- Page sizes: currently 4096, max supported 4096
+--8860-- Valgrind library directory: /usr/local/lib/valgrind
+--8860-- Reading syms from /mydlink/da_adaptor
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /lib/x86_64-linux-gnu/ld-2.23.so
+--8860--   Considering /lib/x86_64-linux-gnu/ld-2.23.so ..
+--8860--   .. CRC mismatch (computed aa979a42 wanted 9019bbb7)
+--8860--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.23.so ..
+--8860--   .. CRC is valid
+--8860-- Reading syms from /usr/local/lib/valgrind/memcheck-amd64-linux
+--8860--    object doesn't have a dynamic symbol table
+--8860-- Scheduler: using generic scheduler lock implementation.
+--8860-- Reading suppressions file: /usr/local/lib/valgrind/default.supp
+==8860== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-8860-by-root-on-???
+==8860== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-8860-by-root-on-???
+==8860== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-8860-by-root-on-???
+==8860==
+==8860== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==8860== don't want to do, unless you know exactly what you're doing,
+==8860== or are doing some strange experiment):
+==8860==   /usr/local/lib/valgrind/../../bin/vgdb --pid=8860 ...command...
+==8860==
+==8860== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==8860==   /path/to/gdb /mydlink/da_adaptor
+==8860== and then give GDB the following command
+==8860==   target remote | /usr/local/lib/valgrind/../../bin/vgdb --pid=8860
+==8860== --pid is optional if only one valgrind process is running
+==8860==
+--8860-- REDIR: 0x401cfd0 (ld-linux-x86-64.so.2:strlen) redirected to 0x5811397d (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--8860-- REDIR: 0x401b920 (ld-linux-x86-64.so.2:index) redirected to 0x58113997 (vgPlain_amd64_linux_REDIR_FOR_index)
+--8860-- Reading syms from /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
+--8860-- Reading syms from /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+==8860== WARNING: new redirection conflicts with existing -- ignoring it
+--8860--     old: 0x0401cfd0 (strlen              ) R-> (0000.0) 0x5811397d vgPlain_amd64_linux_REDIR_FOR_strlen
+--8860--     new: 0x0401cfd0 (strlen              ) R-> (2007.0) 0x04c310c0 strlen
+--8860-- REDIR: 0x401bb40 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c32170 (strcmp)
+--8860-- REDIR: 0x401dd30 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c35ab0 (mempcpy)
+--8860-- Reading syms from /mydlink/lib/libcrypto.so.1.0.0
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /mydlink/lib/libssl.so.1.0.0
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /mydlink/lib/libevent-2.0.so.5
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /mydlink/lib/libevent_pthreads-2.0.so.5
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /mydlink/lib/libevent_openssl-2.0.so.5
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /lib/x86_64-linux-gnu/libjson-c.so.2.0.0
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /mydlink/lib/libz.so.1
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /lib/x86_64-linux-gnu/libpthread-2.23.so
+--8860--   Considering /usr/lib/debug/.build-id/ce/17e023542265fc11d9bc8f534bb4f070493d30.debug ..
+--8860--   .. build-id is valid
+--8860-- Reading syms from /lib/x86_64-linux-gnu/libm-2.23.so
+--8860--   Considering /lib/x86_64-linux-gnu/libm-2.23.so ..
+--8860--   .. CRC mismatch (computed e8c3647b wanted c3efddac)
+--8860--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.23.so ..
+--8860--   .. CRC is valid
+--8860-- Reading syms from /mydlink/lib/libdns_sd.so.1
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /mydlink/lib/libcurl.so.4
+--8860--    object doesn't have a symbol table
+--8860-- Reading syms from /lib/x86_64-linux-gnu/libc-2.23.so
+--8860--   Considering /lib/x86_64-linux-gnu/libc-2.23.so ..
+--8860--   .. CRC mismatch (computed 7a8ee3e4 wanted a5190ac4)
+--8860--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.23.so ..
+--8860--   .. CRC is valid
+--8860-- Reading syms from /lib/x86_64-linux-gnu/libdl-2.23.so
+--8860--   Considering /lib/x86_64-linux-gnu/libdl-2.23.so ..
+--8860--   .. CRC mismatch (computed 39227170 wanted ab6e2c22)
+--8860--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libdl-2.23.so ..
+--8860--   .. CRC is valid
+--8860-- REDIR: 0x6917a00 (libc.so.6:strcasecmp) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x6913280 (libc.so.6:strcspn) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x6919cf0 (libc.so.6:strncasecmp) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x69156f0 (libc.so.6:strpbrk) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x6915a80 (libc.so.6:strspn) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x691714b (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x6911cd0 (libc.so.6:strcmp) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x69171b0 (libc.so.6:memset) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x6915400 (libc.so.6:rindex) redirected to 0x4c30a40 (rindex)
+--8860-- REDIR: 0x6913720 (libc.so.6:strlen) redirected to 0x4c31000 (strlen)
+--8860-- REDIR: 0x690cd10 (libc.so.6:calloc) redirected to 0x4c2fed6 (calloc)
+--8860-- REDIR: 0x690c130 (libc.so.6:malloc) redirected to 0x4c2ddcf (malloc)
+--8860-- REDIR: 0x690c6c0 (libc.so.6:realloc) redirected to 0x4c300a5 (realloc)
+--8860-- REDIR: 0x691c3f0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x69d5ea0 (libc.so.6:__memcpy_avx_unaligned) redirected to 0x4c32600 (memcpy@@GLIBC_2.14)
+--8860-- REDIR: 0x690c4f0 (libc.so.6:free) redirected to 0x4c2eec9 (free)
+--8860-- REDIR: 0x691c470 (libc.so.6:__GI_memcpy) redirected to 0x4c32da0 (__GI_memcpy)
+--8860-- REDIR: 0x6911d10 (libc.so.6:__GI_strcmp) redirected to 0x4c32080 (__GI_strcmp)
+--8860-- REDIR: 0x69d3ff0 (libc.so.6:__strncasecmp_avx) redirected to 0x4c319e0 (strncasecmp)
+--8860-- REDIR: 0x6911a80 (libc.so.6:index) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x6911ab0 (libc.so.6:__GI_strchr) redirected to 0x4c30ba0 (__GI_strchr)
+--8860-- REDIR: 0x691e550 (libc.so.6:rawmemchr) redirected to 0x4c35610 (rawmemchr)
+--8860-- REDIR: 0x6927570 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c32030 (strcmp)
+--8860-- REDIR: 0x691e760 (libc.so.6:strchrnul) redirected to 0x4c355e0 (strchrnul)
+--8860-- REDIR: 0x69173b0 (libc.so.6:__GI_mempcpy) redirected to 0x4c357e0 (__GI_mempcpy)
+--8860-- REDIR: 0x69153c0 (libc.so.6:strncpy) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x692e000 (libc.so.6:__strncpy_sse2_unaligned) redirected to 0x4c31610 (__strncpy_sse2_unaligned)
+--8860-- REDIR: 0x6913160 (libc.so.6:strcpy) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x692d9d0 (libc.so.6:__strcpy_sse2_unaligned) redirected to 0x4c310e0 (strcpy)
+--8860-- REDIR: 0x6916630 (libc.so.6:strstr) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x6932070 (libc.so.6:__strstr_sse2_unaligned) redirected to 0x4c35ca0 (strstr)
+--8860-- REDIR: 0x69d2980 (libc.so.6:__strcasecmp_avx) redirected to 0x4c31900 (strcasecmp)
+--8860-- REDIR: 0x6913b70 (libc.so.6:__GI_strncmp) redirected to 0x4c317b0 (__GI_strncmp)
+--8860-- REDIR: 0x6916060 (libc.so.6:__GI_strstr) redirected to 0x4c35d10 (__strstr_sse2)
+--8860-- REDIR: 0x6916860 (libc.so.6:memchr) redirected to 0x4c32210 (memchr)
+--8860-- REDIR: 0x69131a0 (libc.so.6:__GI_strcpy) redirected to 0x4c311b0 (__GI_strcpy)
+--8860-- REDIR: 0x6916bf0 (libc.so.6:__GI_memcmp) redirected to 0x4c34150 (__GI_memcmp)
+--8860-- REDIR: 0x69fa970 (libc.so.6:__memset_avx2) redirected to 0x4c34a80 (memset)
+--8860-- REDIR: 0x699e210 (libc.so.6:__memcpy_chk) redirected to 0x4a28770 (_vgnU_ifunc_wrapper)
+--8860-- REDIR: 0x69d5e90 (libc.so.6:__memcpy_chk_avx_unaligned) redirected to 0x4c35ba0 (__memcpy_chk)
+**8860** *** memcpy_chk: buffer overflow detected ***: program terminated
+==8860==    at 0x4C309FC: VALGRIND_PRINTF_BACKTRACE (valgrind.h:6306)
+==8860==    by 0x4C35C8A: __memcpy_chk (vg_replace_strmem.c:1593)
+==8860==    by 0x4174BD: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441113: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== HEAP SUMMARY:
+==8860==     in use at exit: 14,805 bytes in 62 blocks
+==8860==   total heap usage: 462 allocs, 400 frees, 59,270 bytes allocated
+==8860==
+==8860== Searching for pointers to 62 not-freed blocks
+==8860== Checked 8,676,576 bytes
+==8860==
+==8860== 3 bytes in 1 blocks are still reachable in loss record 1 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF4E28: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4411D4: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 5 bytes in 1 blocks are still reachable in loss record 2 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF4E28: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4411B4: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 9 bytes in 1 blocks are still reachable in loss record 3 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442F62: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 9 bytes in 1 blocks are still reachable in loss record 4 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442FE5: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 9 bytes in 1 blocks are still reachable in loss record 5 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF4E28: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441200: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 9 bytes in 1 blocks are still reachable in loss record 6 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF4E28: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441224: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 9 bytes in 1 blocks are still reachable in loss record 7 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF49FF: json_object_object_add (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441234: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 9 bytes in 1 blocks are still reachable in loss record 8 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF4E28: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441144: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 10 bytes in 1 blocks are still reachable in loss record 9 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442F35: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 10 bytes in 1 blocks are still reachable in loss record 10 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF49FF: json_object_object_add (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4411AC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 11 bytes in 1 blocks are still reachable in loss record 11 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442F8F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 11 bytes in 1 blocks are still reachable in loss record 12 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442FBA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 11 bytes in 1 blocks are still reachable in loss record 13 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x44303F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 11 bytes in 1 blocks are still reachable in loss record 14 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF49FF: json_object_object_add (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441154: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 12 bytes in 1 blocks are still reachable in loss record 15 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x442BBA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443012: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 13 bytes in 1 blocks are still reachable in loss record 16 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF49FF: json_object_object_add (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441210: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 13 bytes in 1 blocks are still reachable in loss record 17 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF49FF: json_object_object_add (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4411E4: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 13 bytes in 1 blocks are still reachable in loss record 18 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF49FF: json_object_object_add (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4411C4: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 16 bytes in 1 blocks are still reachable in loss record 19 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x54C3524: ??? (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B18DB: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 16 bytes in 1 blocks are still reachable in loss record 20 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x54B0A94: event_base_priority_init (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B17D4: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 16 bytes in 1 blocks are still reachable in loss record 21 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF49FF: json_object_object_add (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441192: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 24 bytes in 1 blocks are still reachable in loss record 22 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x54BE7E6: evmap_io_add (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54AFA16: event_add (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B183E: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 32 bytes in 1 blocks are still reachable in loss record 23 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x54B08F6: event_get_supported_methods (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x42EB24: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406D52: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 40 bytes in 1 blocks are still reachable in loss record 24 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x56E8F21: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
+==8860==    by 0x54B1FE2: event_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x56E90FA: evthread_use_pthreads (in /mydlink/lib/libevent_pthreads-2.0.so.5)
+==8860==    by 0x42EB14: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406D52: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 40 bytes in 1 blocks are still reachable in loss record 25 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x56E8F21: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
+==8860==    by 0x54C4563: evsig_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B1FF5: event_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x56E90FA: evthread_use_pthreads (in /mydlink/lib/libevent_pthreads-2.0.so.5)
+==8860==    by 0x42EB14: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406D52: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 40 bytes in 1 blocks are still reachable in loss record 26 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x56E8F21: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
+==8860==    by 0x54C2693: evutil_secure_rng_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B2000: event_global_setup_locks_ (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x56E90FA: evthread_use_pthreads (in /mydlink/lib/libevent_pthreads-2.0.so.5)
+==8860==    by 0x42EB14: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406D52: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 40 bytes in 1 blocks are still reachable in loss record 27 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x56E8F21: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
+==8860==    by 0x54B180B: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 44 bytes in 1 blocks are still reachable in loss record 28 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x442D82: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 48 bytes in 1 blocks are still reachable in loss record 29 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x56E8E7A: ??? (in /mydlink/lib/libevent_pthreads-2.0.so.5)
+==8860==    by 0x54B182F: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 56 bytes in 1 blocks are still reachable in loss record 30 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x44129C: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442EFA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 64 bytes in 1 blocks are still reachable in loss record 31 of 56
+==8860==    at 0x4C2DDA0: malloc (vg_replace_malloc.c:298)
+==8860==    by 0x4C300F0: realloc (vg_replace_malloc.c:826)
+==8860==    by 0x54AF7A4: event_add (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D71: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 72 bytes in 1 blocks are still reachable in loss record 32 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x4412AE: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442EFA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 72 bytes in 1 blocks are still reachable in loss record 33 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF41F1: ??? (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF466A: json_object_new_object (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4410B4: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 72 bytes in 1 blocks are still reachable in loss record 34 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF41F1: ??? (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF4E02: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441200: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 72 bytes in 1 blocks are still reachable in loss record 35 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF41F1: ??? (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF4E02: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441224: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 72 bytes in 1 blocks are still reachable in loss record 36 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF41F1: ??? (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF4E02: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4411D4: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 72 bytes in 1 blocks are still reachable in loss record 37 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF41F1: ??? (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF4E02: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4411B4: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 72 bytes in 1 blocks are still reachable in loss record 38 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF41F1: ??? (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF4E02: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x44119C: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 72 bytes in 1 blocks are still reachable in loss record 39 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF41F1: ??? (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF4B7D: json_object_new_int (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441182: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 72 bytes in 1 blocks are still reachable in loss record 40 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF41F1: ??? (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF4E02: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x441144: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 88 bytes in 1 blocks are still reachable in loss record 41 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF7C5A: lh_table_new (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF469B: json_object_new_object (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4410B4: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 128 bytes in 1 blocks are still reachable in loss record 42 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x6913489: strdup (strdup.c:42)
+==8860==    by 0x5AF4E28: json_object_new_string (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x44119C: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 136 bytes in 1 blocks are still reachable in loss record 43 of 56
+==8860==    at 0x4C2DE56: malloc (vg_replace_malloc.c:299)
+==8860==    by 0x54B0D15: event_new (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D5A: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 256 bytes in 1 blocks are still reachable in loss record 44 of 56
+==8860==    at 0x4C2DDA0: malloc (vg_replace_malloc.c:298)
+==8860==    by 0x4C300F0: realloc (vg_replace_malloc.c:826)
+==8860==    by 0x54BE4EA: ??? (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54BE70B: evmap_io_add (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54AFA16: event_add (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B183E: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 272 bytes in 1 blocks are possibly lost in loss record 45 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x40138A4: allocate_dtv (dl-tls.c:322)
+==8860==    by 0x40138A4: _dl_allocate_tls (dl-tls.c:539)
+==8860==    by 0x5F1A26E: allocate_stack (allocatestack.c:588)
+==8860==    by 0x5F1A26E: pthread_create@@GLIBC_2.2.5 (pthread_create.c:539)
+==8860==    by 0x442EAB: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EBE: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 384 bytes in 1 blocks are still reachable in loss record 46 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x54C3543: ??? (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B18DB: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 512 bytes in 1 blocks are still reachable in loss record 47 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x5AF7C7D: lh_table_new (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x5AF469B: json_object_new_object (in /lib/x86_64-linux-gnu/libjson-c.so.2.0.0)
+==8860==    by 0x4410B4: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441C0B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 560 bytes in 1 blocks are still reachable in loss record 48 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442F35: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 560 bytes in 1 blocks are still reachable in loss record 49 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442F62: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 560 bytes in 1 blocks are still reachable in loss record 50 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442F8F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 560 bytes in 1 blocks are still reachable in loss record 51 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442FBA: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 560 bytes in 1 blocks are still reachable in loss record 52 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x442FE5: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 560 bytes in 1 blocks are still reachable in loss record 53 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443012: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 560 bytes in 1 blocks are still reachable in loss record 54 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x442B9B: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x44303F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 640 bytes in 1 blocks are still reachable in loss record 55 of 56
+==8860==    at 0x4C2FF6C: calloc (vg_replace_malloc.c:752)
+==8860==    by 0x54B1629: event_base_new_with_config (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x54B1A3A: event_base_new (in /mydlink/lib/libevent-2.0.so.5)
+==8860==    by 0x442D0F: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EAC: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== 7,168 bytes in 7 blocks are still reachable in loss record 56 of 56
+==8860==    at 0x4C2DDA0: malloc (vg_replace_malloc.c:298)
+==8860==    by 0x4C300F0: realloc (vg_replace_malloc.c:826)
+==8860==    by 0x44147D: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441945: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x441BD9: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x443081: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x406EDF: ??? (in /mydlink/da_adaptor)
+==8860==    by 0x68A882F: (below main) (libc-start.c:291)
+==8860==
+==8860== LEAK SUMMARY:
+==8860==    definitely lost: 0 bytes in 0 blocks
+==8860==    indirectly lost: 0 bytes in 0 blocks
+==8860==      possibly lost: 272 bytes in 1 blocks
+==8860==    still reachable: 14,533 bytes in 61 blocks
+==8860==         suppressed: 0 bytes in 0 blocks
+==8860==
+==8860== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==8860== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

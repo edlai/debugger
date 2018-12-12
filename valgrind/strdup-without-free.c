@@ -20,12 +20,12 @@ int main(void){
  - normally, user should call free before exit
  - there is the result of valgrind which warning use should check memory-leak
 
-# valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all  -v ./strdup-with-out-free
+# valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all  -v ./strdup-without-free
 
 ==9326== Memcheck, a memory error detector
 ==9326== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==9326== Using Valgrind-3.14.0-353a3587bb-20181007X and LibVEX; rerun with -h for copyright info
-==9326== Command: ./strdup-with-out-free
+==9326== Command: ./strdup-without-free
 ==9326==
 --9326-- Valgrind options:
 --9326--    --tool=memcheck

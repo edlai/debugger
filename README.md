@@ -9,13 +9,17 @@ usage of each debugger
 - Size
 - valgrind
 - Kernel panic
+- strace
+- pstrace
+- syslog
+- __cyg_profile_func_enter/__cyg_profile_func_exit
 
 ## System Performance Counters
 
 - I/O
 - Network
 
-## Network
+## Network Sniffer
 
 | # | Title     |  Remarks        |
 |---|:---------:|----------------:|
@@ -27,3 +31,6 @@ usage of each debugger
 ## Firmware
 
 - binwalk
+
+##
+- ttysnoop

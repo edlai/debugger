@@ -28,6 +28,7 @@ usage of each debugger
 | 2 | tcpdump   | post, http, ftp |
 | 3 | rpcapd    |                 |
 | 4 | websocket |                 |
+| 5 | rinetd    | |
 
 ## Firmware
 

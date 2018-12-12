@@ -6,6 +6,7 @@
 
 ## Usage
 
+- with args [How do I run a program with commandline args using gdb within a bash script?](https://stackoverflow.com/questions/6121094/how-do-i-run-a-program-with-commandline-args-using-gdb-within-a-bash-script)
 - trace code with using `break 1`, `run`, `n` and so on
 
 ``` sh

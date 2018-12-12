@@ -6,7 +6,7 @@ a useful tool to check memory leak.
 
 - valgrind
 
-  ```shell
+  ```ash
   $ wget http://www.valgrind.org/downloads/valgrind-3.14.0.tar.bz2
   $ tar xvf valgrind-3.14.0.tar.bz2
   $ cd valgrind-3.14.0

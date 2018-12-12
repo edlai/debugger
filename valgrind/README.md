@@ -7,20 +7,20 @@ a useful tool to check memory leak.
 - valgrind
 
   ```sh
-  wget http://www.valgrind.org/downloads/valgrind-3.14.0.tar.bz2
-  tar xvf valgrind-3.14.0.tar.bz2
-  cd valgrind-3.14.0
-  ./configure
-  make
-  make install
-  ldconfig
+  $ wget http://www.valgrind.org/downloads/valgrind-3.14.0.tar.bz2
+  $ tar xvf valgrind-3.14.0.tar.bz2
+  $ cd valgrind-3.14.0
+  $ ./configure
+  $ make
+  $ sudo make install
+  $ sudo ldconfig
   ```
 
 ## Usage
 
 - valgrind
   ```sh
-  valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all  -v ${your_prog_name}
+  $ valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all  -v ${your_prog_name}
   ```
 
 ## Reference

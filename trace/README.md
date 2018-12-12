@@ -1,4 +1,6 @@
-# gdb/ddd
+# function
+
+- trace function call
 
 ## Requirements
 

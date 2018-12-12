@@ -12,12 +12,13 @@ usage of each debugger
 - strace
 - pstrace
 - syslog
-- __cyg_profile_func_enter/__cyg_profile_func_exit
+- __cyg_profile_func_enter and __cyg_profile_func_exit (with graphic)
 
 ## System Performance Counters
 
-- I/O
+- Disk I/O
 - Network
+- Memory
 
 ## Network Sniffer
 
@@ -32,5 +33,5 @@ usage of each debugger
 
 - binwalk
 
-##
+## Console
 - ttysnoop

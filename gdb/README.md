@@ -2,4 +2,6 @@
 
 ## Requirements
 
+- gdb `apt install gdb`
+
 ## Usage

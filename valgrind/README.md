@@ -4,7 +4,7 @@ a useful tool to check memory leak.
 
 ## Requirements
 
-- valgrind
+- valgrind (from tar-ball)
 
   ```ash
   $ wget http://www.valgrind.org/downloads/valgrind-3.14.0.tar.bz2
@@ -14,6 +14,11 @@ a useful tool to check memory leak.
   $ make
   $ sudo make install
   $ sudo ldconfig
+  ```
+- using apt  (Optional)  
+
+  ```
+  $ apt-get install valgrind*
   ```
 
 ## Usage

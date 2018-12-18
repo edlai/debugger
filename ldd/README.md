@@ -6,7 +6,7 @@ print shared library dependencies if there is no ldd command running in Embedded
 
 ## Usage
 
-使用 `awk`等命令的組合來查看 `rsyslogd` 運行時所需要的函示庫。
+使用範例，這是使用範例使用 `awk`等命令的組合來查看 `rsyslogd` 運行時所需要的函示庫。
 
 - Usage
 ```
@@ -34,6 +34,8 @@ $ awk '/\.so/{print $6}' /proc/`pidof rsyslogd`/maps | sort -u
 ```
 
 ## Appendix
+
+如果嵌入式系統尚有 `ldd` 或 `objdump` 的話，就可以不用這麼麻煩，直接用`ldd` 或 `objdump`即可取得程式運行所需函示庫。
 
 - 透過 `ldd` 的運行結果。
 

@@ -2,9 +2,11 @@
 
 print shared library dependencies if there is no ldd command running in Embedded Linux System.
 
-在嵌入式系統上，如果沒有 `ldd` 這個命令的話，可以用下面的命令的組合來得知所運行的相依性函式庫。
+在嵌入式系統上，如果沒有 `ldd` 這個命令的話，可以用下面的命令的組合直接讀取 `/proc/pid` 底下的資料來得知所運行的相依性函式庫。
 
 ## Usage
+
+使用 `awk`等命令的組合來查看 `rsyslogd` 運行時所需要的函示庫。
 
 - Usage
 ```

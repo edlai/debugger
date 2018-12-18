@@ -1,12 +1,6 @@
 # segfault
 
-## Requirements
-
-- gdb
-
-## Usage
-
-- gdb
+- [gdb](gdb)
 
 ## Reference
 

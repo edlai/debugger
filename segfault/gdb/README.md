@@ -54,3 +54,11 @@ __libc_start_main (main=0x4005d6 <main>, argc=1, argv=0x7fffffffe5d8, init=<opti
 (gdb)
 
 ```
+
+## Appendix
+
+- With `LD_LIBRARY_PATH` by using `--args`
+
+```
+LD_LIBRARY_PATH=/mydlink/lib gdb --args ./strdup-with-out-free -d 7
+```
